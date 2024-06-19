@@ -11,7 +11,7 @@ if (isset($_GET["id"])){
   $password = "";
   $db_name = "bd_cadastro";
 
-  $conn = new mysqli($servername,$username,$password,$dbname);
+  $conn = new mysqli($servername, $username, $password, $db_name);
 
 if ($conn->connect_error){
   die("Erro na conexão com o banco de dados: " . $conn->connect_error);
@@ -23,7 +23,7 @@ $sql = "DELET FROM clientes WHERE ID = $cliente_id";
 
 
 // header = redimenciona para a pagina cliente php
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE){
     header("Location: clientes.php?excluido=true");
     exit;
 }else{
